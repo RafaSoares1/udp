@@ -79,7 +79,7 @@ void udp_socket_t::handle_read() noexcept
     char buffer[1500];
     for(;;)
     {
-        const auto r = read(fd_, buffer, sizeof(buffer));
+        const auto r = read(fd_, buffer, sizeof(buffer) - 1);
         if(r < 0)
         {
             if(errno != EWOULDBLOCK)
@@ -88,6 +88,7 @@ void udp_socket_t::handle_read() noexcept
             }
             return;
         }
+        buffer[r] = '\0';
         printf("read %ld bytes from %d\n", r, fd_);
         printf("Buffer after handle read is: %s\n", buffer);
     }

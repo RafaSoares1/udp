@@ -1,7 +1,14 @@
 #pragma once
 
-#include "bisect/reactor/handler.h"
+#include "handler.h"
 #include <memory>
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+#include <thread>
+#include <atomic>
+#include <chrono>
+#include <mutex>
 
 namespace bisect::reactor
 {
@@ -23,5 +30,12 @@ namespace bisect::reactor
         /// @brief Unegisters an handler. This may be called at any time, concurrently,
         /// and the file descriptor should be removed from the monitored set before the function returns.
         void unregister_handler(int fd);
+      private:
+       void monitor_handlers();
+
+        std::unordered_map<int, std::shared_ptr<handler_t>> handlers; // Stores registered handlers
+        std::mutex handlers_mutex; // Protects access to handlers
+        std::atomic<bool> stop_signal; // Indicates when the monitoring thread should stop
+        std::thread reactor_thread; // Background thread for monitoring handlers 
     };
 } // namespace bisect::reactor
