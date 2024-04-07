@@ -6,7 +6,6 @@
 #include <unordered_map>
 #include <vector>
 #include <thread>
-#include <atomic>
 #include <chrono>
 #include <mutex>
 
@@ -35,7 +34,7 @@ namespace bisect::reactor
 
         std::unordered_map<int, std::shared_ptr<handler_t>> handlers; // Stores registered handlers
         std::mutex handlers_mutex; // Protects access to handlers
-        std::atomic<bool> stop_signal; // Indicates when the monitoring thread should stop
+        bool stop_signal; // Indicates when the monitoring thread should stop
         std::thread reactor_thread; // Background thread for monitoring handlers 
     };
 } // namespace bisect::reactor

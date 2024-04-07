@@ -33,7 +33,7 @@ namespace
 
         if(bind_to_port(fd, port) < 0) return -1;
 
-        if(fcntl(fd, F_SETFL, fcntl(fd, F_GETFL, 0) | O_NONBLOCK) == -1)
+        if(fcntl(fd, F_SETFL, fcntl(fd, F_GETFL, 0) | O_NONBLOCK) == -1) // set socket to non-blocking mode, first step to achieve an asynchronously connection
         {
             return -1;
         }

@@ -34,7 +34,7 @@ int main()
 	}
 
 	/// This will show that everything works correctly.
-	/// UDPP socket can immediately read back. Correctly configured for sending and receiving data.
+	/// UDP socket can immediately read back. Correctly configured for sending and receiving data.
     udpSocket->handle_read();
 
 

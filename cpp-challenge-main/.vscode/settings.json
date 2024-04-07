@@ -48,6 +48,18 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "numeric": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "cstring": "cpp",
+        "chrono": "cpp",
+        "condition_variable": "cpp",
+        "deque": "cpp",
+        "ratio": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "mutex": "cpp",
+        "semaphore": "cpp",
+        "sstream": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp"
     }
 }

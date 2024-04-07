@@ -68,8 +68,5 @@ void reactor_t::monitor_handlers()
                 handler->handle_read();
             }
         }
-        
-        // No need to sleep here since select is inherently blocking until there's activity
-        // or the timeout is reached.
     }
 }
