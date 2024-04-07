@@ -19,7 +19,7 @@ This method encapsulates the creation of the initial validation process, returni
 
 ### 1.3 Testing the udp_socket_t class
 
-In order to test all these functionalities I created a new file called [TestUDP.cpp](https://github.com/RafaSoares1/bisect/blob/main/cpp-challenge-main/demo/mainUDP.cpp) in order to make sure that this class was working as expected.
+In order to test all these functionalities I created a new file called [TestUDP.cpp](https://github.com/RafaSoares1/bisect/blob/main/cpp-challenge-main/demo/TestUDP.cpp) in order to make sure that this class was working as expected.
 
 In order for this to work something was missing: so I created the `send_to()` method that allows sending data to a specified destination address and port. It uses the `sendto() system call`, transferring the user provided data to the given destination address.
 
