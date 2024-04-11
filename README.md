@@ -73,7 +73,12 @@ With everything set up, let me explain how the [main](https://github.com/RafaSoa
 
 ## 4) How to test the UDP connection
 
-When the program is running and waiting for a connection to be established, we can use a Netcat command(networking tool that can read and write data across network connections) to send a message.
+When the program is running, after doing:
+```sh
+make
+```
+
+from the [Makefile](https://github.com/RafaSoares1/udp/blob/main/cpp-challenge-main/Makefile )and waiting for a connection to be established, we can use a Netcat command(networking tool that can read and write data across network connections) to send a message.
 
 We can open another terminal and try to check if everything is working as expected by doing the following:
 
